@@ -67,7 +67,7 @@
 </table>
     </div>
 <!--   Unit 1 -->
-    <div class="col-sm">
+    <div class="col-sm table-responsive">
       <h4>Unit 1 Progress</h4>
       <table class="table table-warning">
         <caption>Unit 1 Progress</caption>
@@ -88,7 +88,7 @@
     </tr>
 </table>
     </div>
-    <div class="col-sm">
+    <div class="col-sm table-responsive">
       <h4>Unit 2 Progress</h4>
       <table class="table table-success">
         <caption>Unit 2 Progress</caption>
@@ -111,74 +111,76 @@
     </div>
   </div>
 
-<!--   Last AP -->
-<div class="row">
-  <div class="col-sm">
-    <h4>13/03 - Assessment Point</h4>
-      <table class="table table-danger">
-        <caption>13/03 - Assessment Point</caption>
-  <thead>
-    <tr>
-      <th class="text-center" scope="col">Total Mark</th>
-      <th class="text-center" scope="col">Max Marks</th>
-      <th class="text-center" scope="col">%</th>
-      <th class="text-center" scope="col">Grade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="text-center">131</td>
-      <td class="text-center">256</td>
-      <td class="text-center">51%</td>
-      <td class="text-center">C</td>
-    </tr>
-</table>
-    </div>
-<!--   Unit 1 -->
-
-    <div class="col-sm">
-      <h4>Unit 1</h4>
-      <table class="table table-warning">
-        <caption>13/03 - Assessment Point</caption>
-  <thead>
-    <tr>
-      <th class="text-center" scope="col">Total Mark</th>
-      <th class="text-center" scope="col">Max Marks</th>
-      <th class="text-center" scope="col">%</th>
-      <th class="text-center" scope="col">Grade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="text-center">13</td>
-      <td class="text-center">21</td>
-      <td class="text-center">72%</td>
-      <td class="text-center">A</td>
-    </tr>
-</table>
-    </div>
-    <div class="col-sm">
-      <h4>Unit 2</h4>
-      <table class="table table-success">
-        <caption>13/03 - Assessment Point</caption>
-  <thead>
-    <tr>
-      <th class="text-center" scope="col">Total Mark</th>
-      <th class="text-center" scope="col">Max Marks</th>
-      <th class="text-center" scope="col">%</th>
-      <th class="text-center" scope="col">Grade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="text-center">12</td>
-      <td class="text-center">10</td>
-      <td class="text-center">83%</td>
-      <td class="text-center">A</td>
-    </tr>
-</table>
-    </div>
-  </div>
+{%for i in range(0, 3)%}
+    <!--  AP Data -->
+    <div class="row">
+      <div class="col-sm table-responsive">
+        <h4>Assessment Point {{i+1}}</h4>
+          <table class="table table-danger">
+            <caption>Assessment Point {{i+1}}</caption>
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Total Mark</th>
+          <th class="text-center" scope="col">Max Marks</th>
+          <th class="text-center" scope="col">%</th>
+          <th class="text-center" scope="col">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">131</td>
+          <td class="text-center">256</td>
+          <td class="text-center">51%</td>
+          <td class="text-center">C</td>
+        </tr>
+    </table>
+        </div>
+    <!--   Unit 1 -->
+    
+        <div class="col-sm table-responsive">
+          <h4>Unit 1</h4>
+          <table class="table table-warning">
+            <caption>Assessment Point {{i+1}}</caption>
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Total Mark</th>
+          <th class="text-center" scope="col">Max Marks</th>
+          <th class="text-center" scope="col">%</th>
+          <th class="text-center" scope="col">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">13</td>
+          <td class="text-center">21</td>
+          <td class="text-center">72%</td>
+          <td class="text-center">A</td>
+        </tr>
+    </table>
+        </div>
+        <div class="col-sm table-responsive">
+          <h4>Unit 2</h4>
+          <table class="table table-success">
+            <caption>Assessment Point {{i+1}}</caption>
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Total Mark</th>
+          <th class="text-center" scope="col">Max Marks</th>
+          <th class="text-center" scope="col">%</th>
+          <th class="text-center" scope="col">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">12</td>
+          <td class="text-center">10</td>
+          <td class="text-center">83%</td>
+          <td class="text-center">A</td>
+        </tr>
+    </table>
+        </div>
+      </div>
+{%endfor%}
 
 <!-- BUTTONS FOR TESTS -->
 <div class="row">
@@ -190,7 +192,7 @@
 
 <!-- TEST DETAILS -->
   <div class="row mt-5">
-      <div class="col">
+      <div class="col table-responsive">
         <table class="table">
           <thead>
             <tr>
