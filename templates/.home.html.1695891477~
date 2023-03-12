@@ -1,0 +1,118 @@
+<!-- HEADER TEMPLATE -->
+{% extends 'templateBase.html' %}
+
+{% block header %}
+  {% block title %} USERNAME {% endblock %}
+{% endblock %}
+
+{% block pageTitle %} Home {% endblock %}
+
+
+{% block content %}
+<!--     CONTENT ROWS -->
+<div class="row">
+      <div class="col">
+        <button class="px-3" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
+        <button class="mx-5" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
+      </div>
+    </div>
+
+<!-- Graphs -->
+<div class="row">
+    <div class="col-sm">
+      OVERALL PROGRESS CHART
+    </div>
+    <div class="col-sm">
+      UNIT 1 PROGRESS 
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+
+  <div class="row mt-5">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center" scope="col">No.</th>
+              <th class="text-center" scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Name</th>
+              <th class="text-center" scope="col">Mark</th>
+              <th class="text-center" scope="col">Max Mark</th>
+              <th class="text-center" scope="col">%</th>
+              <th class="text-center" scope="col">Grade</th>
+              <th class="text-center" scope="col">View</th>
+            </tr>
+          </thead>
+          <tbody>
+          {%for i in range(0, 50)%}
+            <tr>
+              <th class="text-center" scope="row">{{i+1}}</th>
+              <td class="text-center">13/03/2023</td>
+              <td>Practice questions</td>
+              <td>Practice Questions - 13/03</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+              <td class="text-center"><a href="{{ url_for('createTest') }}">
+                <img src="{{url_for('static', filename='img/book-open.svg')}}" class="rounded" alt="edit"></a></td>
+            </tr>
+          {%endfor%}
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button type="button"><a class="nav-link" href="{{ url_for('createTest') }}">Add Test</a></button>
+      </div>
+    </div>
+
+
+<!-- ############# MODAL: Edit Test Details ################### -->
+  <div class="modal fade" id="testFilterView" tabindex="-1" aria-labelledby="testUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="testUpdateLabel">Test Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+          <div class="mb-3">
+<!--             MODAL FORM  -->
+            <label for="test-date" class="col-form-label">Choose Date Range</label>
+            <input type="date" class="form-control" id="start-test-date" min="2021-01-01" max="2027-12-31">
+            <input type="date" class="form-control" id="end-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="form-topic" class="col-form-label">Test Type</label>
+            <select id="form-topic" class="form-select" aria-label="Default select example">
+              <option selected>Choose Test Type</option>
+              <option value="1">Assessment Point (AP)</option>
+              <option value="2">Practice Questions</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="form-mark" class="col-form-label">Test Name</label>
+            <input type="text" class="form-control" id="form-mark" value="Practice Questions: 13/03/23">
+          </div> 
+        </form>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">View</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+<!-- ############# -->
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

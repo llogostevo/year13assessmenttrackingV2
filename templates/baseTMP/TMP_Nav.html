@@ -1,0 +1,58 @@
+<!-- NAVIGATION: TEMPLATE  -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand nav-title" href={{url_for('index')}}>
+      <img src="/static/img/logoGraph.png" alt="Bootstrap" width="30" height="24" class="d-inline-block align-text-top">
+      The Learner Checklist
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+<!--       STUDENT DROPDOWN MENU -->
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{url_for('studentUnitChecklist')}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Learning Dashboards
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link disabled">Learning Dashboards:</a>
+            </li>
+            <li><a class="dropdown-item" href="{{url_for('studentUnitChecklist')}}">Overall</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <!-- dynamically create drop down menu -->
+            {% for course in courses['subjects'] %}
+              <li><a class="dropdown-item" href={{url_for('studentUnitChecklist')}}>{{course}}</a></li> 
+            {% endfor %}
+          </ul>
+        </li>
+<!--         END STUDENT DROPDOWN -->
+<!--         TEACHING DROPDOWNS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{url_for('teacherUnitChecklist')}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teaching Dashboards
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link disabled">Exam 2023:</a>
+            </li>
+            <li><a class="dropdown-item" href="#">Overall</a></li>
+            {% for teacherCourse in teacherCourses['2023'] %}
+              <li><a class="dropdown-item" href="{{url_for('teacherUnitChecklist')}}">{{teacherCourse}}</a></li> 
+            {% endfor %}
+            <li><hr class="dropdown-divider"></li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Exam 2024:</a>
+            </li>
+            <li><a class="dropdown-item" href="{{url_for('teacherUnitChecklist')}}">Overall</a></li>
+            {% for teacherCourse in teacherCourses['2024'] %}
+              <li><a class="dropdown-item" href="#">{{teacherCourse}}</a></li> 
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END: NAVIGATION: TEMPLATE  -->

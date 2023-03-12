@@ -1,0 +1,276 @@
+<!-- HEADER TEMPLATE -->
+{% extends 'templateBase.html' %}
+
+{% block header %}
+  {% block title %}Mickey Mouse{% endblock %}
+{% endblock %}
+
+{% block pageTitle %} Dashboard {% endblock %}
+
+
+{% block content %}
+<!--     CONTENT ROWS -->
+<!-- STUDENT DETAILS -->
+<div class="row">
+<div class="col-sm">
+  
+      <table class="table">
+        <caption>Mickey Mouse</caption>
+  <thead>
+    <tr>
+      <th class="text-center table-light" scope="col">Target Grade</th>
+      <th class="text-center table-light" scope="col">Unit 1 - Exam Date</th>
+      <th class="text-center table-light" scope="col">Unit 2 - Exam Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">A</td>
+      <td class="text-center">10/06/2023 - 64 school days</td>
+      <td class="text-center">22/06/2023 - 74 school days</td>
+    </tr>
+</table>
+    </div>
+</div>
+
+<!-- BUTTONS FOR TESTS -->
+<div class="row">
+      <div class="col">
+        <button class="px-3" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
+        <button class="mx-5" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
+      </div>
+    </div>
+
+<!-- Overall Prog Tables -->
+<div class="row my-5">
+
+<!--   Overall progress -->
+  <div class="col-sm">
+    <h4>Overall Progress</h4>
+      <table class="table table-danger">
+        <caption>Overall Progress</caption>
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Total Mark</th>
+      <th class="text-center" scope="col">Max Marks</th>
+      <th class="text-center" scope="col">%</th>
+      <th class="text-center" scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">131</td>
+      <td class="text-center">256</td>
+      <td class="text-center">51%</td>
+      <td class="text-center">C</td>
+    </tr>
+</table>
+    </div>
+<!--   Unit 1 -->
+    <div class="col-sm">
+      <h4>Unit 1 Progress</h4>
+      <table class="table table-warning">
+        <caption>Unit 1 Progress</caption>
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Total Mark</th>
+      <th class="text-center" scope="col">Max Marks</th>
+      <th class="text-center" scope="col">%</th>
+      <th class="text-center" scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">131</td>
+      <td class="text-center">256</td>
+      <td class="text-center">51%</td>
+      <td class="text-center">C</td>
+    </tr>
+</table>
+    </div>
+    <div class="col-sm">
+      <h4>Unit 2 Progress</h4>
+      <table class="table table-success">
+        <caption>Unit 2 Progress</caption>
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Total Mark</th>
+      <th class="text-center" scope="col">Max Marks</th>
+      <th class="text-center" scope="col">%</th>
+      <th class="text-center" scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">240</td>
+      <td class="text-center">256</td>
+      <td class="text-center">83%</td>
+      <td class="text-center">C</td>
+    </tr>
+</table>
+    </div>
+  </div>
+
+<!--   Last AP -->
+<div class="row">
+  <div class="col-sm">
+    <h4>13/03 - Assessment Point</h4>
+      <table class="table table-danger">
+        <caption>13/03 - Assessment Point</caption>
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Total Mark</th>
+      <th class="text-center" scope="col">Max Marks</th>
+      <th class="text-center" scope="col">%</th>
+      <th class="text-center" scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">131</td>
+      <td class="text-center">256</td>
+      <td class="text-center">51%</td>
+      <td class="text-center">C</td>
+    </tr>
+</table>
+    </div>
+<!--   Unit 1 -->
+
+    <div class="col-sm">
+      <h4>Unit 1</h4>
+      <table class="table table-warning">
+        <caption>13/03 - Assessment Point</caption>
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Total Mark</th>
+      <th class="text-center" scope="col">Max Marks</th>
+      <th class="text-center" scope="col">%</th>
+      <th class="text-center" scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">13</td>
+      <td class="text-center">21</td>
+      <td class="text-center">72%</td>
+      <td class="text-center">A</td>
+    </tr>
+</table>
+    </div>
+    <div class="col-sm">
+      <h4>Unit 2</h4>
+      <table class="table table-success">
+        <caption>13/03 - Assessment Point</caption>
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">Total Mark</th>
+      <th class="text-center" scope="col">Max Marks</th>
+      <th class="text-center" scope="col">%</th>
+      <th class="text-center" scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">12</td>
+      <td class="text-center">10</td>
+      <td class="text-center">83%</td>
+      <td class="text-center">A</td>
+    </tr>
+</table>
+    </div>
+  </div>
+
+<!-- BUTTONS FOR TESTS -->
+<div class="row">
+      <div class="col">
+        <button class="px-3" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
+        <button class="mx-5" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
+      </div>
+    </div>
+
+<!-- TEST DETAILS -->
+  <div class="row mt-5">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center" scope="col">No.</th>
+              <th class="text-center" scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Name</th>
+              <th class="text-center" scope="col">Mark</th>
+              <th class="text-center" scope="col">Max Mark</th>
+              <th class="text-center" scope="col">%</th>
+              <th class="text-center" scope="col">Grade</th>
+              <th class="text-center" scope="col">View</th>
+            </tr>
+          </thead>
+          <tbody>
+          {%for i in range(0, 50)%}
+            <tr>
+              <th class="text-center" scope="row">{{i+1}}</th>
+              <td class="text-center">13/03/2023</td>
+              <td>Practice questions</td>
+              <td>Practice Questions - 13/03</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+              <td class="text-center"><a href="{{ url_for('createTest') }}">
+                <img src="{{url_for('static', filename='img/book-open.svg')}}" class="rounded" alt="edit"></a></td>
+            </tr>
+          {%endfor%}
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button type="button"><a class="nav-link" href="{{ url_for('createTest') }}">Add Test</a></button>
+      </div>
+    </div>
+
+
+<!-- ############# MODAL: Edit Test Details ################### -->
+  <div class="modal fade" id="testFilterView" tabindex="-1" aria-labelledby="testUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="testUpdateLabel">Filter Test Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--             MODAL FORM  -->
+          <form>
+          <div class="mb-3">
+            <label for="test-date" class="col-form-label">Start Date</label>
+            <input type="date" class="form-control" id="start-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="end-test-date" class="col-form-label">End Date</label>
+            <input type="date" class="form-control" id="end-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="form-topic" class="col-form-label">Test Type</label>
+            <select id="form-topic" class="form-select" aria-label="Default select example">
+              <option selected>Choose Test Type</option>
+              <option value="1">Assessment Point (AP)</option>
+              <option value="2">Practice Questions</option>
+            </select>
+          </div>
+        </form>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">View</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+<!-- ############# -->
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
