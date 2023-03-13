@@ -6,21 +6,113 @@
 {% endblock %}
 
 {% block pageTitle %} Sub-Topic Progress {% endblock %}
-
+{% block subTopicProgressLink %} active text-warning" aria-current="page {% endblock %}
 
 {% block content %}
 <!--     CONTENT ROWS -->
-    <div class="row">
-      <div class="col">
-        Column
+<div class="row">
+    <!--  AP Data -->
+<h1>1.1.1 Structure and function of the processor</h1>
+  <div class="row mt-5">
+      <div class="col table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center" scope="col">No.</th>
+              <th scope="col">Subtopic</th>
+              <th class="text-center" scope="col">Mark</th>
+              <th class="text-center" scope="col">Max Mark</th>
+              <th class="text-center" scope="col">%</th>
+              <th class="text-center" scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-center" scope="row">1</th>
+              <td >(a)	 The Arithmetic and Logic Unit; ALU, Control Unit and Registers (Program Counter; PC, Accumulator; ACC, Memory Address Register; MAR, Memory Data Register; MDR, Current Instruction Register; CIR). Buses: data, address and control: how this relates to assembly language programs.</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">2</th>
+              <td >(b) The Fetch-Decode-Execute Cycle; including its effects on registers.</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+            </tr>
+             <tr>
+              <th class="text-center" scope="row">3</th>
+              <td >(c) The factors affecting the performance of the CPU: clock speed, number of cores, cache</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+            </tr>
+            <th class="text-center" scope="row">4</th>
+              <td >(d) The use of pipelining in a processor to improve efficiency.</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+            </tr>
+          <th class="text-center" scope="row">5</th>
+              <td >(e) Von Neumann, Harvard and contemporary processor architecture.</td>
+              <td class="text-center">11</td>
+              <td class="text-center">22</td>
+              <td class="text-center">50%</td>
+              <td class="text-center">C</td>
+            </tr>
+        </table>
       </div>
+  </div>
+</div>
+<div class="row">
       <div class="col">
-        Column
-      </div>
-      <div class="col">
-        Column
+        <button class="px-3 btn btn-warning text-dark btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
+        <button class="mx-5 btn btn-warning text-dark btn-outline-light" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
       </div>
     </div>
+
+<!-- ############# MODAL: Edit Test Details ################### -->
+  <div class="modal fade" id="testFilterView" tabindex="-1" aria-labelledby="testUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="testUpdateLabel">Filter Test Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--             MODAL FORM  -->
+          <form>
+          <div class="mb-3">
+            <label for="test-date" class="col-form-label">Start Date</label>
+            <input type="date" class="form-control" id="start-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="end-test-date" class="col-form-label">End Date</label>
+            <input type="date" class="form-control" id="end-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="form-topic" class="col-form-label">Test Type</label>
+            <select id="form-topic" class="form-select" aria-label="Default select example">
+              <option selected>Choose Test Type</option>
+              <option value="1">Assessment Point (AP)</option>
+              <option value="2">Practice Questions</option>
+            </select>
+          </div>
+        </form>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn btn-warning text-dark btn-outline-light">View</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+<!-- ############# -->
 {% endblock %}
 
 {% block footer %}

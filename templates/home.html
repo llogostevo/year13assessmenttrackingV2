@@ -7,6 +7,7 @@
 
 {% block pageTitle %} Dashboard {% endblock %}
 
+{% block homeLink %} active text-warning" aria-current="page {% endblock %}
 
 {% block content %}
 <!--     CONTENT ROWS -->
@@ -34,10 +35,11 @@
 </div>
 
 <!-- BUTTONS FOR TESTS -->
+<!-- class="px-3 btn btn-dark btn-outline-light" -->
 <div class="row">
       <div class="col">
-        <button class="px-3" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
-        <button class="mx-5" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
+        <button class="px-3 btn btn-warning text-dark btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
+        <button class="mx-5 btn btn-warning text-dark btn-outline-light" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
       </div>
     </div>
 
@@ -185,8 +187,8 @@
 <!-- BUTTONS FOR TESTS -->
 <div class="row">
       <div class="col">
-        <button class="px-3" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
-        <button class="mx-5" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
+        <button class="px-3 btn btn-warning text-dark btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">Filter</button>
+        <button class="mx-5 btn btn-warning text-dark btn-outline-light" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">Add Test</a></button>
       </div>
     </div>
 
@@ -228,9 +230,9 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row my-4">
       <div class="col">
-        <button type="button"><a class="nav-link" href="{{ url_for('createTest') }}">Add Test</a></button>
+        <button type="button" class="btn btn-warning text-dark btn-outline-light"><a class="nav-link" href="{{ url_for('createTest') }}">Add Test</a></button>
       </div>
     </div>
 
@@ -265,8 +267,8 @@
         </form>  
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">View</button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn btn-warning text-dark btn-outline-light">View</button>
         </div>
       </div>
     </div>

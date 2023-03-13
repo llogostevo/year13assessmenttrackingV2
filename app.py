@@ -8,6 +8,14 @@ def landingPage():
   return render_template('home.html')
 
 '''
+Interface styling pages
+'''
+@app.route('/styling')
+def styling():
+    return render_template('styling.html')
+
+  
+'''
 AUTH ROUTES
 '''
 # login page

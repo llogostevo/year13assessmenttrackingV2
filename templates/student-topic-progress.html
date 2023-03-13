@@ -5,22 +5,43 @@
   {% block title %} USERNAME {% endblock %}
 {% endblock %}
 
-{% block pageTitle %} Topic Progress {% endblock %}
-
+{% block pageTitle %} Unit 1 Topic Progress {% endblock %}
+{% block topicProgressLink %} active text-warning" aria-current="page {% endblock %}
 
 {% block content %}
 <!--     CONTENT ROWS -->
+
     <div class="row">
-      <div class="col">
-        Column
-      </div>
-      <div class="col">
-        Column
-      </div>
-      <div class="col">
-        Column
-      </div>
-    </div>
+{%for i in range(0, 10)%}
+    <!--  AP Data -->
+
+      <div class="col-sm-6 col-md-4 my-5 table-responsive">
+        <h4>Topic {{i+1}}</h4>
+          <h5>Databases</h5>
+          <table class="table table-danger">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Total Mark</th>
+          <th class="text-center" scope="col">Max Marks</th>
+          <th class="text-center" scope="col">%</th>
+          <th class="text-center" scope="col">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">131</td>
+          <td class="text-center">256</td>
+          <td class="text-center">51%</td>
+          <td class="text-center">C</td>
+        </tr>
+    </table>
+        <button type="button" class="btn btn btn-warning text-dark btn-outline-light" data-bs-dismiss="modal"><a class="nav-link" href="{{ url_for('subTopicProgress') }}">Subtopic</a></button>
+        </div>
+{%endfor%}
+     </div>
+
+
+
 {% endblock %}
 
 {% block footer %}

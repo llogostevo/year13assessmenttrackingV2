@@ -1,0 +1,73 @@
+<!-- HEADER TEMPLATE -->
+{% extends 'templateBase.html' %}
+
+{% block header %}
+  {% block title %}Mickey Mouse{% endblock %}
+{% endblock %}
+
+{% block pageTitle %} PAGE STYLING {% endblock %}
+
+{% block content %}
+
+<p>for styling purposes only.</p>
+
+<h1>In Page Nav Buttons</h1>
+
+<div class="col">
+<!--   MODAL BUTTON -->
+        <button class="px-3 btn btn-warning text-dark btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#testFilterView">open modal button</button>
+<!--   PAGE LINK BUTTON -->
+        <button class="mx-5 btn btn-warning text-dark btn-outline-light" type="button"><a class="nav-link px-1" href="{{ url_for('createTest') }}">page link button</a></button>
+      </div>
+
+<hr />
+
+<h1>In Modal Buttons</h1>
+
+<button type="button" class="btn btn-light" data-bs-dismiss="modal">Close Modal Button</button>
+          <button type="button" class="btn btn btn-warning text-dark btn-outline-light">Call to action Modal button</button>
+
+<hr />
+
+
+<!-- ############# MODAL: Edit Test Details ################### -->
+  <div class="modal fade" id="testFilterView" tabindex="-1" aria-labelledby="testUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="testUpdateLabel">Filter Test Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--             MODAL FORM  -->
+          <form>
+          <div class="mb-3">
+            <label for="test-date" class="col-form-label">Start Date</label>
+            <input type="date" class="form-control" id="start-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="end-test-date" class="col-form-label">End Date</label>
+            <input type="date" class="form-control" id="end-test-date" min="2021-01-01" max="2027-12-31">
+          </div>
+          <div class="mb-3">
+            <label for="form-topic" class="col-form-label">Test Type</label>
+            <select id="form-topic" class="form-select" aria-label="Default select example">
+              <option selected>Choose Test Type</option>
+              <option value="1">Assessment Point (AP)</option>
+              <option value="2">Practice Questions</option>
+            </select>
+          </div>
+        </form>  
+        </div>
+        <div class="modal-footer">
+<!--           MODAL BUTTONS -->
+<button type="button" class="btn btn-light" data-bs-dismiss="modal">Close Modal Button</button>
+          <button type="button" class="btn btn btn-warning text-dark btn-outline-light">Call to action Modal button</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
